@@ -63,11 +63,11 @@ Hãy sử dụng **4 Lenses** dưới đây để quét qua hoạt động vận
 ### 📝 List bài toán của tôi:
 | # | Subsidiary (VinFast/Xanh SM...) | Lens | Mô tả ngắn bài toán |
 |---|----------------------------------|------|---------------------|
-| 1 | | | |
-| 2 | | | |
-| 3 | | | |
-| 4 | | | |
-| 5 | | | |
+| 1 | **Vinmec × Xanh SM × Vinhomes** | Repetitive / Time-consuming / AI-upgrade / Stakeholder Pain | **Điều phối khám và giảm no-show:** Dự đoán bệnh nhân vắng mặt/đến muộn, tự động nhắc lịch, hỗ trợ đổi lịch, lấp slot trống và kết hợp điều phối Xanh SM cho bệnh nhân cần di chuyển.   |
+| 2 | **Vinmec**                      | Repetitive / Time-consuming / AI-upgrade / Stakeholder Pain | **Ambient AI Scribe và chuẩn hóa bệnh án:** Chuyển hội thoại khám bệnh thành văn bản, tạo bản nháp bệnh án/tóm tắt/chỉ định để bác sĩ kiểm tra và phê duyệt.                            |
+| 3 | **Vinmec**                      | Repetitive / Time-consuming / AI-upgrade / Stakeholder Pain | **Điều phối luồng bệnh nhân xuyên khoa:** Dự báo thời gian chờ và tình trạng quá tải tại khám, xét nghiệm, CĐHA, thanh toán, nhà thuốc; tối ưu routing và hàng đợi theo thời gian thực. |
+| 4 | **Vinmec**                      | Repetitive / Time-consuming / AI-upgrade / Stakeholder Pain | **Ưu tiên đọc phim và theo dõi kết quả bất thường:** AI ưu tiên worklist CĐHA, theo dõi ca bất thường/kết quả chưa được xác nhận và tạo quy trình closed-loop từ phát hiện đến xử lý.   |
+| 5 | **Vinmec × Xanh SM × Vinhomes** | Repetitive / Time-consuming / AI-upgrade / Stakeholder Pain | **Tối ưu xuất viện, giường bệnh và hậu xuất viện:** Dự báo thời điểm sẵn sàng xuất viện, theo dõi task còn thiếu, dự báo giường trống và kết nối vận chuyển/chăm sóc sau xuất viện.     |
 
 ---
 
@@ -75,7 +75,7 @@ Hãy sử dụng **4 Lenses** dưới đây để quét qua hoạt động vận
 
 Chọn **top 3 bài toán** từ danh sách trên và hoàn thiện **3 Quick Problem Cards** dưới đây (10 phút/card).
 
-```
+<!-- ```
 ┌─────────────────────────────────────────────────────────────┐
 │ QUICK PROBLEM CARD #___                                     │
 │                                                             │
@@ -96,8 +96,94 @@ Chọn **top 3 bài toán** từ danh sách trên và hoàn thiện **3 Quick Pr
 │                                                             │
 │ Quick Architecture: [ ] No AI  [ ] Rule  [ ] LLM  [ ] Agent │
 └─────────────────────────────────────────────────────────────┘
-```
+``` -->
+┌─────────────────────────────────────────────────────────────┐
+│ QUICK PROBLEM CARD #5                                       │
+│                                                             │
+│ Bài toán (1 câu): Y tá phải gọi điện hỏi thăm thủ công tình │
+│ trạng bệnh nhân sau xuất viện và ghi log hệ thống.          │
+│                                                             │
+│ Công ty thành viên: [ ] VinFast  [ ] Xanh SM  [ ] Vinhomes  │
+│                     [x] Vinmec   [ ] Khác (Ghi rõ)________  │
+│                                                             │
+│ Ai đang đau (Actor)? Điều dưỡng viên / Y tá chăm sóc KH.    │
+│                                                             │
+│ Workflow thủ công hiện tại (3-5 bước):                      │
+│   1. Lọc danh sách xuất viện ──> 2. Gọi điện thoại theo     │
+│   kịch bản ──> 3. Ghi nháp log ──> 4. Gõ tay nhập liệu EMR  │
+│                                                             │
+│ Bước nào tốn thời gian/lỗi nhất? Bước 2 (Gọi chờ nghe máy)  │
+│ và Bước 4 (Nhập liệu thủ công) (⏱ 10-15 phút/lượt).         │
+│                                                             │
+│ AI có thể nhảy vào hỗ trợ ở bước nào? Thay thế bước 2 và 3  │
+│ bằng Chat/Voice Agent để hỏi thăm và tự động ghi log, chỉ   │
+│ alert y tá khi có dấu hiệu y khoa bất thường (Fallback).    │
+│                                                             │
+│ Đo thành công bằng gì (Metric có số)? Giảm thời gian gọi    │
+│ điện thủ công từ 3 giờ/ngày ──> dưới 30 phút/ngày, tỷ lệ    │
+│ cập nhật log tự động đạt > 90%.                             │
+│                                                             │
+│ Quick Architecture: [ ] No AI  [ ] Rule  [ ] LLM  [x] Agent │
+└─────────────────────────────────────────────────────────────┘
 
+┌─────────────────────────────────────────────────────────────┐
+│ QUICK PROBLEM CARD #4                                       │
+│                                                             │
+│ Bài toán (1 câu): Phân loại mức độ ưu tiên (Triage) và định │
+│ tuyến yêu cầu của bệnh nhân qua các kênh CSKH đang làm thủ  │
+│ công, gây nghẽn cổ chai.                                    │
+│                                                             │
+│ Công ty thành viên: [ ] VinFast  [ ] Xanh SM  [ ] Vinhomes  │
+│                     [x] Vinmec   [ ] Khác (Ghi rõ)________  │
+│                                                             │
+│ Ai đang đau (Actor)? Nhân viên trực tổng đài / CSKH.        │
+│                                                             │
+│ Workflow thủ công hiện tại (3-5 bước):                      │
+│   1. Đọc/nghe tin nhắn từ BN ──> 2. Đánh giá triệu chứng    │
+│   thủ công ──> 3. Tra cứu lịch bác sĩ ──> 4. Chuyển ca bệnh │
+│                                                             │
+│ Bước nào tốn thời gian/lỗi nhất? Bước 2 (Đánh giá triệu     │
+│ chứng) và Bước 3 (Tìm chuyên khoa) (⏱ 5-10 phút/lượt).      │
+│                                                             │
+│ AI có thể nhảy vào hỗ trợ ở bước nào? Tự động đọc hiểu ngữ  │
+│ nghĩa triệu chứng (Bước 1, 2) và lập tức gợi ý chuyên khoa, │
+│ mức độ ưu tiên để định tuyến luồng xử lý.                   │
+│                                                             │
+│ Đo thành công bằng gì (Metric có số)? Giảm thời gian chờ    │
+│ phản hồi từ 2-4 tiếng ──> dưới 5 phút, độ chính xác phân    │
+│ luồng đạt > 95%.                                            │
+│                                                             │
+│ Quick Architecture: [ ] No AI  [ ] Rule  [x] LLM  [ ] Agent │
+└─────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────┐
+│ QUICK PROBLEM CARD #3                                       │
+│                                                             │
+│ Bài toán (1 câu): Đối soát và gán mã bệnh (ICD-10) thủ công │
+│ từ sổ khám bệnh để làm hồ sơ yêu cầu bồi thường bảo hiểm.   │
+│                                                             │
+│ Công ty thành viên: [ ] VinFast  [ ] Xanh SM  [ ] Vinhomes  │
+│                     [x] Vinmec   [ ] Khác (Ghi rõ)________  │
+│                                                             │
+│ Ai đang đau (Actor)? Nhân viên hành chính y tế / Thanh toán.│
+│                                                             │
+│ Workflow thủ công hiện tại (3-5 bước):                      │
+│   1. Nhận hồ sơ lâm sàng ──> 2. Đọc hiểu diễn tiến bệnh lý  │
+│   ──> 3. Tra cứu mã ICD-10 ──> 4. Gắn mã & đẩy lên hệ thống.│
+│                                                             │
+│ Bước nào tốn thời gian/lỗi nhất? Bước 2 và Bước 3 do phụ    │
+│ thuộc hoàn toàn vào trí nhớ, kinh nghiệm (⏱ 15-20 phút/ca). │
+│                                                             │
+│ AI có thể nhảy vào hỗ trợ ở bước nào? Tự động trích xuất    │
+│ thực thể y khoa (Bước 2) và so khớp, gợi ý mã ICD-10 có độ  │
+│ tự tin cao nhất (Bước 3).                                   │
+│                                                             │
+│ Đo thành công bằng gì (Metric có số)? Giảm tỷ lệ hồ sơ bị   │
+│ từ chối (claim denial rate) từ 8% ──> dưới 2%, giảm thời    │
+│ gian xử lý xuống < 3 phút/hồ sơ.                            │
+│                                                             │
+│ Quick Architecture: [ ] No AI  [ ] Rule  [x] LLM  [ ] Agent │
+└─────────────────────────────────────────────────────────────┘
 > [!TIP]
 > **🤖 AI Prompts — Stress-Test thẻ bài toán:**
 > Hãy dán nội dung thẻ bài toán của bạn vào LLM để nhận phản biện:
