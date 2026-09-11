@@ -68,8 +68,8 @@ def main():
             print("\n")
 
             # Verification checks
-            if "[DRAFT_REPLY]" not in full_response:
-                print("\033[91m⚠️  CẢNH BÁO: Response thiếu tag [DRAFT_REPLY]!\033[0m\n")
+            if "[DRAFT_ONLY]" not in full_response:
+                print("\033[91m⚠️  CẢNH BÁO: Response thiếu tag [DRAFT_ONLY]!\033[0m\n")
             if "escalate_to_manager" in full_response.lower():
                 print("\033[91m🚨 ESCALATION detected — cần chuyển cho Manager!\033[0m\n")
 
