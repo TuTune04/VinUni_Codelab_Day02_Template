@@ -61,10 +61,10 @@ Hãy sử dụng **4 Lenses** dưới đây để quét qua hoạt động vận
 > *"Tôi là AI Engineer tại Vin Smart Future (Vingroup). Tôi đang tìm kiếm các pain point vận hành cụ thể có thể tối ưu bằng AI cho mảng [Chọn một: VinFast / Xanh SM / Vinhomes / Vinmec]. Hãy gợi ý cho tôi 5 quy trình nghiệp vụ thủ công, tốn nhiều thời gian và gây rò rỉ hiệu suất kèm con số thống kê ước tính về tổn thất."*
 
 ### 📝 List bài toán của tôi:
-| # | Subsidiary (VinFast/Xanh SM...) | Lens | Mô tả ngắn bài toán |
+| # | Subsidiary (VinFast/Xanh SM.....)| Lens | Mô tả ngắn bài toán |
 |---|----------------------------------|------|---------------------|
-| 1 | | | |
-| 2 | | | |
+| 1 |	Vinmec – Quầy tiếp đón/Thu ngân  |Lặp lại|	Đối soát & soạn công văn bảo lãnh viện phí (LOG) với hàng chục hãng bảo hiểm thương mại/quốc tế khác nhau |
+| 2 |Vinmec – Điều dưỡng nội trú       |Lặp lại | 	Bàn giao ca trực (handover) 3 lần/ngày/khoa vẫn ghi tay hoặc gõ lại thủ công|
 | 3 | | | |
 | 4 | | | |
 | 5 | | | |
@@ -77,7 +77,7 @@ Chọn **top 3 bài toán** từ danh sách trên và hoàn thiện **3 Quick Pr
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
-│ QUICK PROBLEM CARD #___                                     │
+│ QUICK PROBLEM CARD #1___                                     │
 │                                                             │
 │ Bài toán (1 câu): ________________________________________  │
 │ Công ty thành viên: [ ] VinFast  [ ] Xanh SM  [ ] Vinhomes  │
