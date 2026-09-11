@@ -45,6 +45,7 @@ thu ngân, kế toán bảo hiểm — gián tiếp là khách hàng phải ch�
 │ Quick Architecture: [X] Rule | [X] LLM | [ ] Agent Feature │
 └─────────────────────────────────────────────────────────────┘
 ```
+```
 ┌─────────────────────────────────────────────────────────────┐
 │ QUICK PROBLEM CARD #2                                        │
 │                                                               │
@@ -75,6 +76,7 @@ thu ngân, kế toán bảo hiểm — gián tiếp là khách hàng phải ch�
 │                                                               │
 │ Quick Architecture: [ ] No AI  [X] Rule  [X] LLM  [ ] Agent  │
 └─────────────────────────────────────────────────────────────┘
+```
 ```
 ┌─────────────────────────────────────────────────────────────┐
 │ QUICK PROBLEM CARD #3                                        │
@@ -110,6 +112,7 @@ thu ngân, kế toán bảo hiểm — gián tiếp là khách hàng phải ch�
 │ Quick Architecture: [ ] No AI  [X] Rule  [X] LLM  [ ] Agent  │
 └─────────────────────────────────────────────────────────────┘
 ```
+```
 ┌─────────────────────────────────────────────────────────────┐
 │ QUICK PROBLEM CARD #4                                        │
 │                                                               │
@@ -144,6 +147,7 @@ thu ngân, kế toán bảo hiểm — gián tiếp là khách hàng phải ch�
 │                                                               │
 │ Quick Architecture: [ ] No AI  [X] Rule  [X] LLM  [ ] Agent  │
 └─────────────────────────────────────────────────────────────┘
+```
 ```
 ┌─────────────────────────────────────────────────────────────┐
 │ QUICK PROBLEM CARD #5                                        │
